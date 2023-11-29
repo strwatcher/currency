@@ -1,0 +1,1 @@
+export { BaseInput, type PublicBaseInputProps as BaseInputProps} from './base-input'
