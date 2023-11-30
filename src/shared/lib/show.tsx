@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 
 export type ShowProps<T> = {
-  when: boolean | T
+  when?: false | T
   fallback?: ReactNode
-  children: ((value?: T) => JSX.Element) | ReactNode
+  children: ((value: T) => JSX.Element) | ReactNode
 }
 
 export const Show = <T,>(props: ShowProps<T>) => {

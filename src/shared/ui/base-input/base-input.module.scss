@@ -4,6 +4,7 @@
   --input-padding-top: 24px;
   --input-padding-bottom: 8px;
 
+  --input-width: auto;
   --input-height: 60px;
 
   --input-root-margin-top: 16px;
@@ -13,15 +14,18 @@
   --input-color-error: var(--material-color-red-700);
   --input-color-border: var(--material-color-grey-400);
   --input-color-postfix: var(--material-color-grey-400);
+  --input-color-background: var(--material-color-white);
 
   display: flex;
   flex-direction: column;
   position: relative;
   font-family: Open Sans;
+  width: var(--input-width);
 
   font-size: 1em;
   line-height: 1em;
   margin-top: var(--input-root-margin-top);
+  background: var(--input-color-background);
 
   &.active {
     color: var(--input-color-text);
@@ -31,6 +35,7 @@
     }
   }
 
+  &.focused,
   &:focus-within {
     color: var(--input-color-active);
     .input-inner {
@@ -39,6 +44,7 @@
     }
   }
 
+  &.focused,
   &.active,
   &:focus-within {
     .input-label {
