@@ -1,0 +1,47 @@
+@use '@/app/styles/viewports.scss' as *;
+
+.section-root {
+  &.opened {
+    .section-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .section-header {
+    --group-align-items: center;
+    --group-justify-content: space-between;
+  }
+
+  .section-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .section-content {
+    padding: 64px;
+    &.section-content-enter {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    &.section-content-enter-active {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: opacity 300ms ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    &.section-content-exit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.section-content-exit-active {
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity 300ms ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    @include lt-md {
+      padding: 24px 8px;
+    }
+  }
+}

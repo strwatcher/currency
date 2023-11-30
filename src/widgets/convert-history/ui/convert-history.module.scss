@@ -1,0 +1,23 @@
+@use '@/app/styles/viewports.scss' as *;
+
+.convert-history-root {
+  width: 100%;
+
+  .convert-history-content {
+    height: 500px;
+  }
+  .convert-history-chart {
+    top: 0;
+    left: 0;
+  }
+
+  @include lt-sm {
+    .convert-history-chart {
+      height: 300px;
+      width: 100%;
+    }
+    .convert-history-content {
+      height: 300px;
+    }
+  }
+}

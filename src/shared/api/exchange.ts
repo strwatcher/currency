@@ -67,6 +67,10 @@ const GetHistoryResponseContract = z.array(GetHistoryChunkContract)
 
 type GetHistoryResponse = z.infer<typeof GetHistoryResponseContract>
 
+export type HistoryItem = {
+  date: string
+  ratio: number
+}
 export const getHistoryQuery = createQuery({
   effect: createEffect(async ({ source, target }: GetHistoryQueryParams) => {
     const currentDate = dayjs().subtract(1, 'day') // Sorry but free api can't provide more actual data :(
@@ -99,10 +103,10 @@ export const getHistoryQuery = createQuery({
 
     return isValid
   },
-  mapData({ result }) {
+  mapData({ result }): HistoryItem[] {
     return (result as GetHistoryResponse).map(({ date, ...other }) => ({
-      date,
-      ratio: other[Object.keys(other)[0]],
+      date: date as string,
+      ratio: other[Object.keys(other)[0]] as number,
     }))
   },
 })

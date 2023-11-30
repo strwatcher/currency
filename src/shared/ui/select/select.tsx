@@ -26,6 +26,9 @@ export type SelectProps = Omit<BaseInputProps, 'postfix'> & {
   onChange?: (value: string) => void
   label?: string
   error?: string
+  classes?: {
+    root?: string
+  }
 }
 
 export const Select = (props: SelectProps) => {
@@ -132,7 +135,7 @@ export const Select = (props: SelectProps) => {
       classes={{
         focused: s.focused,
         error: s.error,
-        'input-root': s['select-root'],
+        'input-root': cn(s['select-root'], props.classes?.root),
         'input-label': s['select-label'],
       }}
     />

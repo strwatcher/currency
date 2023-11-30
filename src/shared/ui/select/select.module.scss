@@ -44,6 +44,7 @@
     cursor: pointer;
     &.native {
       width: 100%;
+      height: var(--input-height);
       position: absolute;
       border: none;
       opacity: 0;
@@ -53,9 +54,7 @@
 
     &.custom {
       position: relative;
-
       background: var(--material-color-white);
-      display: none;
     }
 
     .select-value {
@@ -79,6 +78,7 @@
       background-color: var(--input-color-background);
       max-height: var(--select-max-height);
       padding-bottom: var(--border-radius-default);
+      z-index: var(--popup-layer);
     }
 
     .select-options {
@@ -93,12 +93,6 @@
       &:hover {
         background-color: var(--material-color-grey-100);
         font-weight: 600;
-      }
-    }
-
-    @media (hover: hover) {
-      &.custom {
-        display: block;
       }
     }
   }

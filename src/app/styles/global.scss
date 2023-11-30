@@ -2,6 +2,10 @@
   font-family: Open Sans;
 }
 
+body {
+  margin: 0;
+}
+
 :root {
   input[type='number'] {
     -moz-appearance: textfield;

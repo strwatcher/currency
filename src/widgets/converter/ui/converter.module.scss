@@ -1,0 +1,28 @@
+@use '@/app/styles/viewports.scss' as *;
+
+.straight-root {
+  width: 100%;
+}
+.straight-stack {
+  --stack-align-items: center;
+  --stack-gap: 16px;
+  width: 100%;
+}
+
+.straight-block {
+  --group-justify-content: space-between;
+  --group-gap: 16px;
+  width: 100%;
+
+  @include lt-md {
+    flex-direction: column;
+    --group-align-items: center;
+    .straight-input {
+      --input-width: 100%;
+    }
+
+    .straight-element {
+      width: 100%;
+    }
+  }
+}

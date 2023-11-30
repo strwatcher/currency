@@ -4,6 +4,9 @@ import { BaseInput, BaseInputProps } from '../base-input'
 export type NumberInputProps = BaseInputProps & {
   onChange: (value: number) => void
   value: number | ''
+  classes?: {
+    root?: string
+  }
 }
 export const NumberInput = (props: NumberInputProps) => {
   const onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -29,6 +32,9 @@ export const NumberInput = (props: NumberInputProps) => {
       postfix={props.postfix}
       active={isActive}
       input={input}
+      classes={{
+        'input-root': props.classes?.root,
+      }}
     />
   )
 }

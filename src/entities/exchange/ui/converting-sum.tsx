@@ -3,7 +3,13 @@ import { useUnit } from 'effector-react'
 import { $convertingSum, convertingSumChanged } from '../model'
 import { $source } from '@/entities/currencies'
 
-export const ConvertingSumInput = () => {
+export const ConvertingSumInput = ({
+  classes,
+}: {
+  classes?: {
+    root?: string
+  }
+}) => {
   const inputProps = useUnit({
     value: $convertingSum,
     onChange: convertingSumChanged,
@@ -16,6 +22,7 @@ export const ConvertingSumInput = () => {
       onChange={inputProps.onChange}
       value={inputProps.value ?? ''}
       postfix={source}
+      classes={classes}
     />
   )
 }

@@ -1,0 +1,24 @@
+@use '@/app/styles/viewports.scss' as *;
+
+.layout-root {
+  --layout-padding: 48px;
+  margin: auto;
+  max-width: 1200px;
+  width: calc(100% - 2 * var(--layout-padding));
+  padding: var(--layout-padding);
+  display: flex;
+  justify-content: center;
+
+  @include lt-lg {
+    --layout-padding: 24px;
+    margin: 0;
+    width: 1200px;
+    max-width: calc(100% - 2 * var(--layout-padding));
+  }
+
+  @include lt-sm {
+    --layout-padding: 8px;
+    width: calc(100% - 2 * var(--layout-padding));
+    max-width: auto;
+  }
+}

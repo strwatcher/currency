@@ -1,0 +1,25 @@
+@use '@/app/styles/viewports.scss' as *;
+
+.converter-list-root {
+  width: 100%;
+
+  .converter-list-group {
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > * {
+      text-align: end;
+    }
+  }
+
+  @include lt-sm {
+    .converter-list-group {
+      flex-wrap: wrap;
+      row-gap: 20px;
+      & > * {
+        flex-grow: 1;
+        text-align: start;
+      }
+    }
+  }
+}
