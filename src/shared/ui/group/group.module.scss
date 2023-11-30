@@ -1,0 +1,11 @@
+.group-root {
+  --group-gap: 8px;
+  --group-justify-content: flex-start;
+  --group-align-items: flex-end;
+
+  display: flex;
+
+  gap: var(--group-gap);
+  justify-content: var(--group-justify-content);
+  align-items: var(--group-align-items);
+}

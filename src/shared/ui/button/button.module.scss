@@ -1,0 +1,36 @@
+.button-root {
+  --button-border-radius: var(--border-radius-default);
+  --button-padding: 12px;
+
+  --button-color: var(--material-color-white);
+  --button-background: var(--material-color-blue-700);
+  --button-border-color: var(--material-color-blue-700);
+
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--button-color);
+
+  background: var(--button-background);
+
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.button-variant-primary {
+    --button-color: var(--material-color-white);
+    --button-background: var(--material-color-blue-700);
+    --button-border-color: var(--material-color-blue-700);
+  }
+
+  &.button-variant-light {
+    --button-color: var(--material-color-grey-900);
+    --button-background: var(--material-color-white);
+    --button-border-color: var(--material-color-grey-300);
+  }
+
+  cursor: pointer;
+}

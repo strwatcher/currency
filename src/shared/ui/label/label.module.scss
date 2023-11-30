@@ -1,0 +1,23 @@
+.label-root {
+  --label-font-size: 16px;
+  --label-font-weight: 500;
+  --label-color: var(--material-color-grey-900);
+
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-color);
+  margin: 0;
+  padding: 0;
+
+  &.label-variant-primary {
+    --label-font-size: 16px;
+    --label-font-weight: 500;
+    --label-color: var(--material-color-grey-900);
+  }
+
+  &.label-variant-error {
+    --label-font-size: 18px;
+    --label-font-weight: 600;
+    --label-color: var(--material-color-red-700);
+  }
+}

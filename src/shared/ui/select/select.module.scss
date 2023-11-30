@@ -10,103 +10,108 @@
   }
 }
 
-.focused {
+.select-root {
+  --select-max-height: 300px;
+
+  &.focused {
+    .select {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+
+      border-bottom: 1px solid var(--input-color-border);
+
+      animation: flatBorders 0.3s ease-in-out;
+    }
+
+    .select-icon {
+      transform: rotate(180deg)
+        translateY(calc(-1 * var(--input-height) / 2 + 50%));
+    }
+  }
+
+  &.error {
+    .select {
+      .select-popup {
+        border-left: 1px solid var(--input-color-error);
+        border-right: 1px solid var(--input-color-error);
+        border-bottom: 1px solid var(--input-color-error);
+      }
+    }
+  }
+
   .select {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
+    cursor: pointer;
+    &.native {
+      width: 100%;
+      position: absolute;
+      border: none;
+      opacity: 0;
+      border-radius: var(--border-radius-default);
+      background: var(--material-color-white);
+    }
 
-    border-bottom: 1px solid var(--input-color-border);
+    &.custom {
+      position: relative;
 
-    animation: flatBorders 0.3s ease-in-out;
+      background: var(--material-color-white);
+      display: none;
+    }
+
+    .select-value {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .select-popup {
+      border-bottom-left-radius: var(--border-radius-default);
+      border-bottom-right-radius: var(--border-radius-default);
+      border-left: 1px solid var(--input-color-active);
+      border-bottom: 1px solid var(--input-color-active);
+      border-right: 1px solid var(--input-color-active);
+
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--input-color-background);
+      max-height: var(--select-max-height);
+      padding-bottom: var(--border-radius-default);
+    }
+
+    .select-options {
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    .select-option {
+      cursor: pointer;
+      padding: 8px 12px;
+
+      &:hover {
+        background-color: var(--material-color-grey-100);
+        font-weight: 600;
+      }
+    }
+
+    @media (hover: hover) {
+      &.custom {
+        display: block;
+      }
+    }
+  }
+
+  .select-label {
+    cursor: pointer;
   }
 
   .select-icon {
-    transform: rotate(180deg)
-      translateY(calc(-1 * var(--input-height) / 2 + 50%));
-  }
-}
-
-.error {
-  .select {
-    .select-options {
-      border-left: 1px solid var(--input-color-error);
-      border-right: 1px solid var(--input-color-error);
-      border-bottom: 1px solid var(--input-color-error);
-    }
-  }
-}
-
-.select-label {
-  cursor: pointer;
-}
-
-.select-icon {
-  transition: transform 0.3s ease-in-out;
-  transform-origin: center center;
-  position: absolute;
-  right: 8px;
-  transform: translateY(calc(var(--input-height) / 2 - 50%));
-}
-
-.select {
-  cursor: pointer;
-  &.native {
-    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
     position: absolute;
-    border: none;
-    opacity: 0;
-    border-radius: var(--border-radius-default);
-    background: var(--material-color-white);
-  }
-
-  &.custom {
-    position: relative;
-
-    background: var(--material-color-white);
-    display: none;
-  }
-
-  .select-value {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .select-options {
-    border-bottom-left-radius: var(--border-radius-default);
-    border-bottom-right-radius: var(--border-radius-default);
-    border-left: 1px solid var(--input-color-active);
-    border-bottom: 1px solid var(--input-color-active);
-    border-right: 1px solid var(--input-color-active);
-
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--input-color-background);
-    max-height: 500px;
-  }
-
-  .select-option {
-    cursor: pointer;
-    padding: 8px 12px;
-
-    &:hover {
-      background-color: var(--material-color-grey-100);
-      font-weight: 600;
-    }
-
-    &:last-child {
-      border-bottom-left-radius: var(--border-radius-default);
-      border-bottom-right-radius: var(--border-radius-default);
-    }
-  }
-
-  @media (hover: hover) {
-    &.custom {
-      display: block;
-    }
+    right: 8px;
+    transform: translateY(calc(var(--input-height) / 2 - 50%));
   }
 }

@@ -3,7 +3,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './app'
 import { appStarted } from '@/shared/config'
-import '@/pages/model'
 
 appStarted()
 

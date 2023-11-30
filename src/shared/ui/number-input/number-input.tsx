@@ -3,7 +3,7 @@ import { BaseInput, BaseInputProps } from '../base-input'
 
 export type NumberInputProps = BaseInputProps & {
   onChange: (value: number) => void
-  value?: number
+  value: number | ''
 }
 export const NumberInput = (props: NumberInputProps) => {
   const onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -26,6 +26,7 @@ export const NumberInput = (props: NumberInputProps) => {
     <BaseInput
       error={props.error}
       label={props.label}
+      postfix={props.postfix}
       active={isActive}
       input={input}
     />
